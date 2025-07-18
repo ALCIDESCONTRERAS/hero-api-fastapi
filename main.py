@@ -10,7 +10,7 @@ app.title = "Heros Api"
 
 @app.on_event("startup")
 def on_startup():
-    create_db_and_table
+    create_db_and_table()
     
 app.include_router(router_heroes)
 app.include_router(router_user)
