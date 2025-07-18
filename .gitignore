@@ -1,1 +1,14 @@
-venv
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+.vscode/
+
+.DS_Store
+Thumbs.db
+
+alembic/versions/
+
+*.swp
