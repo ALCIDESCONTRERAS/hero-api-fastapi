@@ -11,7 +11,7 @@ load_dotenv()
 MYSQL_URL = os.getenv("MYSQL_URL")
 
 if MYSQL_URL:
-    url_connection = MYSQL_URL  # Para producción (Railway)
+    url_connection = MYSQL_URL  # Esto solo es para producción (Railway)
 else:
     # Para desarrollo local
     MYSQL_USER = os.getenv("MYSQL_USER")
@@ -24,15 +24,12 @@ else:
 print("URL conexión:", url_connection)
 engine = create_engine(url_connection)
 
-
 def create_db_and_table():
     SQLModel.metadata.create_all(engine)
-
 
 def get_session():
     with Session(engine) as session:
         yield session
-
 
 # def reset_db():
 #     SQLModel.metadata.drop_all(engine)
